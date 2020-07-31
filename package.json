@@ -1,5 +1,6 @@
 {
   "name": "contentful-starter-gatsby-blog",
+  "package-name": "git+https://b5b31879b467a016f2a101d19003f802cedf2752:x-oauth-basic@github.com/fernanda-moreno/contentful-blog-testing.git",
   "description": "Contentful Gatsby Starter Blog",
   "private": true,
   "version": "0.0.1",
