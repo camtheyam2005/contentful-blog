@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
 import Navigation from '../components/navigation.js'
+import ArticlePreview from '../components/article-preview'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -34,6 +35,11 @@ class BlogPostTemplate extends React.Component {
             >
               {post.publishDate}
             </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: post.description.childMarkdownRemark.html,
+              }}
+            />
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
@@ -53,6 +59,11 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishDate(formatString: "MMMM Do, YYYY")
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
       heroImage {
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
