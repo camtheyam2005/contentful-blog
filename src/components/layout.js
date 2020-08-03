@@ -11,6 +11,8 @@ class Template extends React.Component {
       <Container>
         {/* <Navigation /> */}
         {children}
+        <br></br>
+        © 2020 <a href="https://www.understandcovid.org/" target="_blank" style= {{color: `#272727` }}>Coronavirus Visualization Team</a>
       </Container>
     )
   }
