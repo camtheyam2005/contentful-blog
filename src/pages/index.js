@@ -19,14 +19,28 @@ class RootIndex extends React.Component {
           <Helmet title="CVT Blog" />
           <Hero data={author.node} />
           <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
+          <h2 className="section-headline">Project Updates</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
+                if (node.tags == 'project updates') {
                 return (
                   <li key={node.slug}>
                     <ArticlePreview article={node} />
                   </li>
                 )
+                }
+              })}
+            </ul>
+            <h2 className="section-headline">Research</h2>
+            <ul className="article-list">
+              {posts.map(({ node }) => {
+                if (node.tags == 'research') {
+                return (
+                  <li key={node.slug}>
+                    <ArticlePreview article={node} />
+                  </li>
+                )
+                }
               })}
             </ul>
           </div>
